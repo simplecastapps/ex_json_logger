@@ -59,5 +59,7 @@ defmodule ExJsonLogger do
 
   defp format_metadata(pid) when is_pid(pid), do: inspect(pid)
   defp format_metadata(ref) when is_reference(ref), do: inspect(ref)
+  defp format_metadata(tuple) when is_tuple(tuple), do: inspect(tuple)
+  defp format_metadata(func) when is_function(func), do: inspect(func)
   defp format_metadata(other), do: other
 end
